@@ -1,0 +1,73 @@
+{{template "header"}}		
+         
+<div class="ibox-content">
+	<div class="table-responsive">
+		<table id="mydt" class="table table-striped table-bordered table-hover">
+			<thead>
+				<tr>
+					<th>Peer Name</th>
+					<th>Request Url</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>peer0.org1.example.com</td>
+					<td>grpcs://127.0.0.1:7051</td>
+				</tr>
+				<tr>
+					<td>peer1.org1.example.com</td>
+					<td>grpcs://127.0.0.1:8051</td>
+				</tr>
+				<tr>
+					<td>peer0.org2.example.com</td>
+					<td>grpcs://127.0.0.1:9051</td>
+				</tr>
+				<tr>
+					<td>peer1.org2.example.com</td>
+					<td>grpcs://127.0.0.1:10051</td>
+				</tr>
+				<tr>
+					<td>peer1.org2.example.com</td>
+					<td>grpcs://127.0.0.1:10051</td>
+				</tr>
+				<tr>
+					<td>peer1.org2.example.com</td>
+					<td>grpcs://127.0.0.1:10051</td>
+				</tr>
+				<tr>
+					<td>peer1.org2.example.com</td>
+					<td>grpcs://127.0.0.1:10051</td>
+				</tr>
+				<tr>
+					<td>peer1.org2.example.com</td>
+					<td>grpcs://127.0.0.1:10051</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+  	        
+	<!-- Mainly scripts -->
+	<script src="/static/js/jquery-3.1.1.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+	<script src="/static/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="/static/js/plugins/dataTables/datatables.min.js"></script>
+
+	<!-- Custom and plugin javascript -->
+	<script src="/static/js/inspinia.js"></script>
+	<script src="/static/js/plugins/pace/pace.min.js"></script>
+
+	<!-- Page-Level Scripts -->
+	<script>
+		$(document).ready(function(){
+			$("#sidebar-menu-network").addClass("active")
+			$('#mydt').dataTable({
+				"pageLength": 5,     
+ 			})
+    });
+ </script>
+
+</body>
+</html>
+

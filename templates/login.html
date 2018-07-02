@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>User | Login</title>
+	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/font-awesome/css/font-awesome.css" rel="stylesheet">
+	<link href="/static/css/animate.css" rel="stylesheet">
+	<link href="/static/css/style.css" rel="stylesheet">
+</head>
+<body class="gray-bg">
+	<div class="middle-box text-center loginscreen animated fadeInDown">
+		<div>  
+			<h3>用户登录</h3>
+				<form class="m-t" id="login_form" onsubmit="return false;" role="form" action="DASHBOARD.html">
+					<div class="form-group">
+            <input type="text" class="form-control" placeholder="Username" required="" name="username" id="username" onblur="">
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Password" id="password" required="">
+          </div>
+            <button id="login" type="submit" class="btn btn-primary block full-width m-b">Login</button>
+							<a href="#"><small>Forgot password?</small></a>
+              <p class="text-muted text-center"><small>Do not have an account?</small></p>
+              <a class="btn btn-sm btn-white btn-block" href="sign_up.html">Create an account</a>
+        </form>
+            
+    </div>
+  </div>
+
+    <!-- Mainly scripts -->
+    <script src="/static/js/jquery-3.1.1.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+
+		<script>	
+		//	$("#login_form").onclick(function){
+		//		console.log("xxx")
+		//		$.get("/user/name/username/password"),function(){
+		//				$("#username).val()
+		//				$("#password).val()
+		//			}
+		//			$(document).ready(function)
+		//	}		
+	
+		$("#login_form").submit(function(){
+			var username = document.getElementById('username');
+			var password = document.getElementById('password');
+			username = $("#username").val()
+			password = $("#password").val()
+			var address = "/user/name/" + username + "/" + password
+			$.ajax({
+				type:'get',
+				url:address,
+				success:function(result){
+				//	console.log(result)
+					if(result !=''){
+						alert("登录成功!");
+						location.href = "DASHBOARD.html";
+					}
+					else{
+						alert("用户名或者密码错误");
+					}
+				}
+			})
+		})
+		</script>
+</body>
+</html>
